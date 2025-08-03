@@ -12,7 +12,7 @@ export const LaunchList: React.FC<LaunchListProps> = ({ items, onUpdateItem, onR
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editData, setEditData] = useState<Partial<LaunchItem>>({});
 
-  const totalBudget = items.reduce((sum, item) => sum + item.subtotal, 0);
+  // const totalBudget = items.reduce((sum, item) => sum + item.subtotal, 0);
 
   const handleEditStart = (item: LaunchItem) => {
     setEditingId(item.id);
@@ -125,7 +125,7 @@ export const LaunchList: React.FC<LaunchListProps> = ({ items, onUpdateItem, onR
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-semibold text-green-600">
-                      ৳{editData.unitPrice && editData.quantity 
+                      ৳{editData.unitPrice && editData.quantity
                         ? (editData.unitPrice * editData.quantity).toFixed(2)
                         : '0.00'
                       }

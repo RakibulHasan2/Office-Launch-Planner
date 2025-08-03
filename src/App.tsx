@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { Download, Save } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Dashboard } from './components/Dashboard';
 import { PreloadedIngredients } from './components/PreloadedIngredients';
 import { CustomItemForm } from './components/CustomItemForm';
@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleUpdateItem = (updatedItem: LaunchItem) => {
-    setItems(prev => prev.map(item => 
+    setItems(prev => prev.map(item =>
       item.id === updatedItem.id ? updatedItem : item
     ));
     setToast({ message: 'Item updated successfully', type: 'success' });
@@ -71,7 +71,7 @@ function App() {
       const totalBudget = items.reduce((sum, item) => sum + item.subtotal, 0);
       generateInvoicePDF(selectedDate, items, totalBudget, notes);
       setToast({ message: 'Invoice PDF downloaded successfully', type: 'success' });
-    } catch (error) {
+    } catch {
       setToast({ message: 'Error generating PDF. Please try again.', type: 'error' });
     }
   };
@@ -110,14 +110,14 @@ function App() {
                 onUpdateItem={handleUpdateItem}
                 onRemoveItem={handleRemoveItem}
               />
-              
+
               {/* Order Summary Card */}
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                   Order Summary
                 </h3>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center py-2 border-b border-gray-100">
                     <span className="text-gray-600 font-medium">Items:</span>
