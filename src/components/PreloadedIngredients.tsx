@@ -67,7 +67,7 @@ export const PreloadedIngredients: React.FC<PreloadedIngredientsProps> = ({ onAd
                 type="number"
                 min="0"
                 step="0.1"
-                value={quantities[ingredient.id] || ''}
+                value={quantities[ingredient.id] ?? ''}
                 onChange={(e) => handleQuantityChange(ingredient.id, parseFloat(e.target.value) || 0)}
                 placeholder="Qty"
                 className="flex-1 px-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
