@@ -31,7 +31,7 @@ export const PreloadedIngredients: React.FC<PreloadedIngredientsProps> = ({ onAd
     };
 
     onAddToList(launchItem);
-    
+
     // Reset quantity after adding
     setQuantities(prev => ({
       ...prev,
@@ -61,8 +61,8 @@ export const PreloadedIngredients: React.FC<PreloadedIngredientsProps> = ({ onAd
               <h3 className="font-semibold text-gray-900 text-base">{ingredient.name}</h3>
               <span className="text-blue-600 font-bold text-sm bg-blue-50 px-2 py-1 rounded-lg">৳{ingredient.price}/{ingredient.unit}</span>
             </div>
-            
-            <div className="flex items-center gap-3">
+
+            <div className="space-y-3">
               <input
                 type="number"
                 min="0"
@@ -72,17 +72,16 @@ export const PreloadedIngredients: React.FC<PreloadedIngredientsProps> = ({ onAd
                 placeholder="Qty"
                 className="flex-1 px-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
               />
-              <span className="text-xs text-gray-500 font-medium min-w-fit bg-gray-100 px-2 py-1 rounded">{ingredient.unit}</span>
               <button
                 onClick={() => handleAddToList(ingredient)}
                 disabled={!quantities[ingredient.id] || quantities[ingredient.id] <= 0}
-                className="px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 flex items-center gap-2 text-sm font-medium shadow-sm hover:shadow-md"
+                className="px-4 w-full  py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 flex items-center gap-2 text-sm font-medium shadow-sm hover:shadow-md flex items-center justify-center"
               >
                 <Plus className="w-4 h-4" />
                 Add
               </button>
             </div>
-            
+
             {quantities[ingredient.id] && quantities[ingredient.id] > 0 && (
               <div className="mt-3 text-sm font-semibold text-green-600 bg-green-50 px-3 py-2 rounded-lg border border-green-200">
                 Subtotal: ৳{(ingredient.price * quantities[ingredient.id]).toFixed(2)}
