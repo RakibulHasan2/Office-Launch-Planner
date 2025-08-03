@@ -1,12 +1,12 @@
 import { Ingredient } from '../types';
 
 export const preloadedIngredients: Ingredient[] = [
-  { id: '1', name: 'Peyaj (Onion)', price: 35, unit: 'kg' },
-  { id: '2', name: 'Alu (Potato)', price: 25, unit: 'kg' },
+  { id: '1', name: 'Peyaj (Onion)', price: 70, unit: 'kg' },
+  { id: '2', name: 'Alu (Potato)', price: 50, unit: 'kg' },
   { id: '3', name: 'Tomato', price: 30, unit: 'kg' },
   { id: '4', name: 'Garlic', price: 80, unit: 'kg' },
   { id: '5', name: 'Ginger', price: 60, unit: 'kg' },
-  { id: '6', name: 'Rice', price: 55, unit: 'kg' },
+  { id: '6', name: 'Rice', price: 90, unit: 'kg' },
   { id: '7', name: 'Dal (Lentils)', price: 90, unit: 'kg' },
   { id: '8', name: 'Chicken', price: 180, unit: 'kg' },
   { id: '9', name: 'Fish', price: 200, unit: 'kg' },
