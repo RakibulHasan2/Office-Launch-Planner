@@ -129,7 +129,7 @@ function App() {
                   </div>
                   <div className="flex justify-between items-center py-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl px-4 border border-green-200">
                     <span className="text-green-700 font-bold text-lg">Total Budget:</span>
-                    <span className="text-green-600 font-bold text-2xl">৳{totalBudget.toFixed(2)}</span>
+                    <span className="text-green-600 font-bold text-2xl">Tk {totalBudget.toFixed(2)}</span>
                   </div>
                 </div>
 

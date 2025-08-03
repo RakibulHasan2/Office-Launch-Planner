@@ -48,9 +48,9 @@ export const generateInvoicePDF = (
     }
 
     doc.text(item.name, 20, yPosition);
-    doc.text(`৳${item.unitPrice.toFixed(2)}`, 80, yPosition);
+    doc.text(`TK ${item.unitPrice.toFixed(2)}`, 80, yPosition);
     doc.text(`${item.quantity} ${item.unit}`, 120, yPosition);
-    doc.text(`৳${item.subtotal.toFixed(2)}`, 160, yPosition);
+    doc.text(`TK ${item.subtotal.toFixed(2)}`, 160, yPosition);
 
     yPosition += 12;
   });
@@ -62,7 +62,7 @@ export const generateInvoicePDF = (
 
   doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
-  doc.text(`Total Budget: ৳${totalBudget.toFixed(2)}`, 20, yPosition);
+  doc.text(`Total Budget: Tk ${totalBudget.toFixed(2)}`, 20, yPosition);
 
   // Notes section
   if (notes) {
